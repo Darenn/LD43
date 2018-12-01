@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114489164705962296}
   - component: {fileID: 114893121322022748}
   m_Layer: 0
-  m_Name: Fruit1
+  m_Name: Fruit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -152,4 +152,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b895b3a0b297b784aac56aa4922d4585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ObjectPrefabToGiveOnGrab: {fileID: 0}
+  ObjectPrefabToGiveOnGrab: {fileID: 1199223962226672, guid: 3f6717ef1ec5891438b7c971bcef6feb,
+    type: 2}
