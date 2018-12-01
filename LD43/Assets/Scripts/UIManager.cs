@@ -1,5 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
+using System.Timers;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -12,6 +14,17 @@ public class UIManager : MonoBehaviour
     public Image[] InventorySlots;
     public Image[] InventorySelectors;
     [SerializeField] private Inventory inventory;
+
+    public Text TimerText;
+
+    public float Timer; // modified by GameManager
+
+    public Text EventText;
+
+    void Awake()
+    {
+        EventText.text = "";
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -36,5 +49,24 @@ public class UIManager : MonoBehaviour
 	        InventorySelectors[i].enabled = false;
 	    }
 	    InventorySelectors[inventory.CurrentSlot].enabled = true;
+
+	    string min = (int) (Timer / 60f) + "";
+	    if ((Timer / 60f) < 9) min = "0" + min;
+	    string sec = (int) Timer % 60f + "";
+	    if ((Timer % 60f) < 9) sec = "0" + sec;
+        TimerText.text =  min + ":" + sec;
 	}
+
+    public void ShowMessage(string message, float time)
+    {
+        StartCoroutine(StartShowMessage(message, time));
+    }
+
+    IEnumerator StartShowMessage(string message, float time)
+    {
+        EventText.text = message;
+        yield return new WaitForSeconds(time);
+        if (EventText.text == message)
+            EventText.text = "";
+    }
 }

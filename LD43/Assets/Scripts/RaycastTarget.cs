@@ -43,7 +43,7 @@ public class RaycastTarget : MonoBehaviour
 
     void UpdateInputs()
     {
-        if (Input.GetButton("Fire1"))
+        if (Input.GetButtonDown("Fire1"))
         {
             if (current_target != null && current_target.GetComponent<GrabbableObject>() != null)
             {
@@ -56,11 +56,11 @@ public class RaycastTarget : MonoBehaviour
                 current_target = null;
             }
         }
-        if (Input.GetButton("Drop"))
+        if (Input.GetButtonDown("Drop"))
         {
-            inventory.DropSelectedObject();
+            dropSelectedObj();
         }
-        if (Input.GetButton("Fire2") && current_target != null && inventory.GrabbedObject != null)
+        if (Input.GetButtonDown("Fire1") && current_target != null && inventory.GrabbedObject != null)
         {
             Cabane cabane = current_target.GetComponent<Cabane>();
             Food food = inventory.GrabbedObject.GetComponent<Food>();
@@ -68,7 +68,7 @@ public class RaycastTarget : MonoBehaviour
             if (cabane != null && food != null)
             {
                 cabane.Feed(food.FoodAmount);
-                inventory.DropSelectedObject();
+                dropSelectedObj();
             }
         }
 
@@ -92,11 +92,11 @@ public class RaycastTarget : MonoBehaviour
 
         if (Input.GetButtonDown("ChangeObjectL"))
         {
-            changeInventorySlot(Mathf.Clamp(inventory.CurrentSlot - 1, 0, inventory.Objects.Length));
+            changeInventorySlot(Mathf.Clamp(inventory.CurrentSlot - 1, 0, inventory.Objects.Length - 1));
         }
         if (Input.GetButtonDown("ChangeObjectR"))
         {
-            changeInventorySlot(Mathf.Clamp(inventory.CurrentSlot + 1, 0, inventory.Objects.Length));
+            changeInventorySlot(Mathf.Clamp(inventory.CurrentSlot + 1, 0, inventory.Objects.Length - 1));
         }
     }
 
@@ -105,5 +105,17 @@ public class RaycastTarget : MonoBehaviour
         if(inventory.Objects[inventory.CurrentSlot] != null) inventory.Objects[inventory.CurrentSlot].SetActive(false);
         inventory.CurrentSlot = slot;
         if(inventory.Objects[inventory.CurrentSlot] != null) inventory.Objects[inventory.CurrentSlot].SetActive(true);
+    }
+
+    void dropSelectedObj()
+    {
+        inventory.DropSelectedObject();
+        for (int i = inventory.Objects.Length - 1; i >= 0; i--)
+        {
+            if (inventory.Objects[i] != null)
+            {
+                changeInventorySlot(i);
+            }
+        }
     }
 }

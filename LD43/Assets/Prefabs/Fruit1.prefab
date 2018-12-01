@@ -25,7 +25,7 @@ GameObject:
   - component: {fileID: 114489164705962296}
   - component: {fileID: 114893121322022748}
   m_Layer: 0
-  m_Name: Fruit
+  m_Name: Fruit1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -59,7 +59,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 635fe0f35d38b7c439da403497291302, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
