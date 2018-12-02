@@ -17,7 +17,10 @@ public class UIManager : MonoBehaviour
 
     public Text TimerText;
 
+    public Image EnduranceBar;
+
     public float Timer; // modified by GameManager
+    public float Endurance;
 
     public Text EventText;
 
@@ -30,8 +33,9 @@ public class UIManager : MonoBehaviour
 	void Update ()
 	{
 	    FoodBar.fillAmount = Cabane.Food / Cabane.MaxFood;
+	    EnduranceBar.fillAmount = Endurance / 100;
 
-	    for (int i = 0; i < inventory.Objects.Length; i++)
+        for (int i = 0; i < inventory.Objects.Length; i++)
 	    {
 	        GameObject obj = inventory.Objects[i];
 	        if (obj != null)
@@ -51,9 +55,9 @@ public class UIManager : MonoBehaviour
 	    InventorySelectors[inventory.CurrentSlot].enabled = true;
 
 	    string min = (int) (Timer / 60f) + "";
-	    if ((Timer / 60f) < 9) min = "0" + min;
+	    if ((Timer / 60f) < 10) min = "0" + min;
 	    string sec = (int) Timer % 60f + "";
-	    if ((Timer % 60f) < 9) sec = "0" + sec;
+	    if ((Timer % 60f) < 10) sec = "0" + sec;
         TimerText.text =  min + ":" + sec;
 	}
 
