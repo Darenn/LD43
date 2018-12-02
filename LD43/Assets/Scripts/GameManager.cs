@@ -22,12 +22,12 @@ public class GameManager : MonoBehaviour
 	    uiManager.Timer = Timer;
 	    if (!fpsctrl.m_IsWalking)
 	    {
-	        Endurance -= EnduranceLossPerSecond * Time.deltaTime;
+	        Endurance = Mathf.Clamp(Endurance - EnduranceLossPerSecond * Time.deltaTime, 0, 100);
 	    }
 	    else
 	    {
-	        Endurance += EnduranceWonPerSecond * Time.deltaTime;
-        }
+	        Endurance = Mathf.Clamp(Endurance + EnduranceWonPerSecond * Time.deltaTime, 0, 100);
+	    }
 	    uiManager.Endurance = Endurance;
 
         if (cabane.Food <= 0 && !isGameOver)
