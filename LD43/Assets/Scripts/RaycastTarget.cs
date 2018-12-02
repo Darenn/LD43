@@ -34,8 +34,14 @@ public class RaycastTarget : MonoBehaviour
             if (current_target != null && current_target.GetComponent<Outline>() != null) 
                 current_target.GetComponent<Outline>().enabled = false;
             current_target = newTarget;
+            
             if (newTarget != null && current_target.GetComponent<Outline>() != null)
                 current_target.GetComponent<Outline>().enabled = true;
+            bool hasknife = inventory.GrabbedObject != null && inventory.GrabbedObject.CompareTag("Knife");
+            if (current_target != null && current_target.GetComponent<Outline>() != null && current_target.GetComponent<Killable>() != null && !hasknife)
+            {
+                    current_target.GetComponent<Outline>().enabled = false;
+            }
         }
 
         UpdateInputs();
@@ -45,14 +51,17 @@ public class RaycastTarget : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            if (current_target != null && current_target.GetComponent<GrabbableObject>() != null)
+            
+            if (current_target != null && (current_target.GetComponent<GrabbableObject>() != null))
             {
                 if (inventory.Objects[inventory.CurrentSlot] != null) inventory.Objects[inventory.CurrentSlot].SetActive(false);
-                inventory.GrabObject(current_target.GetComponent<GrabbableObject>().getObjectToGrab());
+                inventory.GrabObject(current_target);
                 if (inventory.Objects[inventory.CurrentSlot] != null) inventory.Objects[inventory.CurrentSlot].SetActive(true);
+                if (current_target != null && current_target.GetComponent<Outline>() != null)
+                current_target.GetComponent<Rigidbody>().isKinematic = true;
+                current_target.GetComponent<Outline>().enabled = false;
                 inventory.GrabbedObject.transform.parent = transform;
                 inventory.GrabbedObject.transform.position = ObjectGrabbedPosition.position;
-                Destroy(current_target);
                 current_target = null;
             }
         }
@@ -62,13 +71,23 @@ public class RaycastTarget : MonoBehaviour
         }
         if (Input.GetButtonDown("Fire1") && current_target != null && inventory.GrabbedObject != null)
         {
+            // Give food to cabane
             Cabane cabane = current_target.GetComponent<Cabane>();
             Food food = inventory.GrabbedObject.GetComponent<Food>();
             // If i have food and im looking to the cabane
             if (cabane != null && food != null)
             {
                 cabane.Feed(food);
-                dropSelectedObj();
+                dropSelectedObjDestroy();
+            }
+
+            // Or cut the guy
+            Killable kill = current_target.GetComponent<Killable>();
+            if (kill != null && inventory.GrabbedObject.CompareTag("Knife"))
+            {
+                GameObject go = Instantiate(kill.PrefabToSpawn, current_target.transform.position, Quaternion.identity);
+                go.GetComponent<Rigidbody>().isKinematic = false;
+                Destroy(kill.gameObject);
             }
         }
 
@@ -110,12 +129,30 @@ public class RaycastTarget : MonoBehaviour
     void dropSelectedObj()
     {
         inventory.DropSelectedObject();
-        for (int i = inventory.Objects.Length - 1; i >= 0; i--)
+        for (int i = inventory.CurrentSlot - 1; i >= 0; i--)
         {
             if (inventory.Objects[i] != null)
             {
                 changeInventorySlot(i);
+                break;
             }
         }
+        if (inventory.Objects[inventory.CurrentSlot] == null)
+        {
+            for (int i = inventory.Objects.Length - 1; i >= 0; i--)
+            {
+                if (inventory.Objects[i] != null)
+                {
+                    changeInventorySlot(i);
+                    break;
+                }
+            }
+        }
+    }
+
+    void dropSelectedObjDestroy()
+    {
+        Destroy(inventory.GrabbedObject);
+        dropSelectedObj();
     }
 }

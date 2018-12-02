@@ -6,6 +6,7 @@ public class Food : MonoBehaviour
 {
 
     public int FoodAmount;
+
     public Sprite InventorySprite;
 
     public enum FoodType

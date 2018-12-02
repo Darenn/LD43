@@ -43,7 +43,7 @@ public class UIManager : MonoBehaviour
 	        GameObject obj = inventory.Objects[i];
 	        if (obj != null)
 	        {
-	            InventorySlots[i].sprite = obj.GetComponent<Food>().InventorySprite;
+	            InventorySlots[i].sprite = obj.GetComponent<GrabbableObject>().InventorySprite;
 	        }
 	        else
 	        {

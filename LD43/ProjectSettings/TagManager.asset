@@ -5,6 +5,8 @@ TagManager:
   serializedVersion: 2
   tags:
   - Shootable
+  - Fire
+  - Knife
   layers:
   - Default
   - TransparentFX

@@ -34,7 +34,10 @@ public class Inventory : MonoBehaviour {
 
     public void DropSelectedObject()
     {
-        Destroy(Objects[CurrentSlot]);
+        //Destroy(Objects[CurrentSlot]);
+        if (Objects[CurrentSlot] == null) return;
+        Objects[CurrentSlot].GetComponent<Rigidbody>().isKinematic = false;
+        Objects[CurrentSlot].transform.parent = null;
         Objects[CurrentSlot] = null;
     }
 
