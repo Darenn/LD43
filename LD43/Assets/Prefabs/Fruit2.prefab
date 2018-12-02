@@ -115,6 +115,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodAmount: 17
+  TimeToRott: 0
   InventorySprite: {fileID: 21300008, guid: d40c191aa46654db7a426d6a1fa3aa30, type: 3}
   foodType: 2
 --- !u!114 &114489164705962296

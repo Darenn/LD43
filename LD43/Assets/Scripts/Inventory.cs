@@ -20,6 +20,8 @@ public class Inventory : MonoBehaviour {
 
     public void GrabObject(GameObject obj)
     {
+        Food f = obj.GetComponent<Food>();
+        if (f) f.grabbed();
         // If there is a free slot, put the object in it and move to this slot
         for (int i = 0; i < Objects.Length; i++)
         {
@@ -36,6 +38,8 @@ public class Inventory : MonoBehaviour {
     {
         //Destroy(Objects[CurrentSlot]);
         if (Objects[CurrentSlot] == null) return;
+        Food f = Objects[CurrentSlot].GetComponent<Food>();
+        if (f) f.droppedOnFloor();
         Objects[CurrentSlot].GetComponent<Rigidbody>().isKinematic = false;
         Objects[CurrentSlot].transform.parent = null;
         Objects[CurrentSlot] = null;

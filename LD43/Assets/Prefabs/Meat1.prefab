@@ -157,6 +157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b895b3a0b297b784aac56aa4922d4585, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  InventorySprite: {fileID: 21300008, guid: d40c191aa46654db7a426d6a1fa3aa30, type: 3}
 --- !u!114 &114911325562905340
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -169,6 +170,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   FoodAmount: 33
+  TimeToRott: 0
   InventorySprite: {fileID: 21300008, guid: d40c191aa46654db7a426d6a1fa3aa30, type: 3}
   foodType: 4
 --- !u!136 &136479039350647170

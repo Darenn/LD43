@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityStandardAssets.Cameras;
 
 public class Food : MonoBehaviour
 {
 
     public int FoodAmount;
+    public float TimeToRott;
 
     public Sprite InventorySprite;
 
@@ -21,13 +23,28 @@ public class Food : MonoBehaviour
 
     public FoodType foodType;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    private bool dropped = false;
+    private Coroutine c;
+
+    public void droppedOnFloor()
+    {
+        dropped = true;
+        c = StartCoroutine(rott());
+    }
+
+    public void grabbed()
+    {
+        dropped = false;
+        if (c != null)
+            StopCoroutine(c);
+    }
+
+    IEnumerator rott()
+    {
+        yield return new WaitForSeconds(TimeToRott);
+        if (dropped)
+        {
+            Destroy(gameObject);
+        }
+    }
 }
