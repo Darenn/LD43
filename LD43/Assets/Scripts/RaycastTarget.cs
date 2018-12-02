@@ -67,7 +67,7 @@ public class RaycastTarget : MonoBehaviour
             // If i have food and im looking to the cabane
             if (cabane != null && food != null)
             {
-                cabane.Feed(food.FoodAmount);
+                cabane.Feed(food);
                 dropSelectedObj();
             }
         }

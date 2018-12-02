@@ -8,6 +8,18 @@ public class Food : MonoBehaviour
     public int FoodAmount;
     public Sprite InventorySprite;
 
+    public enum FoodType
+    {
+        notype,
+        fruit1,
+        fruit2,
+        fruit3,
+        meat,
+        bigMeat
+    };
+
+    public FoodType foodType;
+
 	// Use this for initialization
 	void Start () {
 		

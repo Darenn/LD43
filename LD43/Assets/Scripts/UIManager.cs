@@ -23,6 +23,9 @@ public class UIManager : MonoBehaviour
     public float Endurance;
 
     public Text EventText;
+    public EventManager em;
+    public Image EventSprite;
+    public Image EventTimer;
 
     void Awake()
     {
@@ -59,6 +62,9 @@ public class UIManager : MonoBehaviour
 	    string sec = (int) Timer % 60f + "";
 	    if ((Timer % 60f) < 10) sec = "0" + sec;
         TimerText.text =  min + ":" + sec;
+
+	    EventSprite.sprite = em.currentSprite;
+	    EventTimer.fillAmount = em.timer / em.maxTimer;
 	}
 
     public void ShowMessage(string message, float time)

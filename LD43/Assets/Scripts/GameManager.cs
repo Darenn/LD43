@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public float Endurance = 100;
     public float EnduranceLossPerSecond;
     public float EnduranceWonPerSecond;
+    public bool NoEnduranceLoss = false;
     public FirstPersonController fpsctrl;
 
     public bool isGameOver = false;
@@ -20,7 +21,7 @@ public class GameManager : MonoBehaviour
 	{
 	    Timer += Time.deltaTime;
 	    uiManager.Timer = Timer;
-	    if (!fpsctrl.m_IsWalking)
+	    if (!fpsctrl.m_IsWalking && !NoEnduranceLoss)
 	    {
 	        Endurance = Mathf.Clamp(Endurance - EnduranceLossPerSecond * Time.deltaTime, 0, 100);
 	    }
