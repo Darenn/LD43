@@ -15,7 +15,14 @@ public class GameManager : MonoBehaviour
     public bool NoEnduranceLoss = false;
     public FirstPersonController fpsctrl;
 
+
     public bool isGameOver = false;
+
+    public void StartGame()
+    {
+        fpsctrl.enabled = true;
+        cabane.enabled = true;
+    }
 	
 	void Update ()
 	{
@@ -30,6 +37,15 @@ public class GameManager : MonoBehaviour
 	        Endurance = Mathf.Clamp(Endurance + EnduranceWonPerSecond * Time.deltaTime, 0, 100);
 	    }
 	    uiManager.Endurance = Endurance;
+	    if (Endurance <= 0)
+	    {
+	        fpsctrl.blockRunning = true;
+	    }
+
+	    else if(Endurance >= EnduranceLossPerSecond)
+	    {
+	        fpsctrl.blockRunning = false;
+	    }
 
         if (cabane.Food <= 0 && !isGameOver)
 	    {
