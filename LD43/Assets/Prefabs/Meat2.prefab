@@ -27,7 +27,7 @@ GameObject:
   - component: {fileID: 136479039350647170}
   - component: {fileID: 54533455417753838}
   m_Layer: 0
-  m_Name: Meat1
+  m_Name: Meat2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -173,6 +173,7 @@ MonoBehaviour:
   TimeToRott: 8
   InventorySprite: {fileID: 21300008, guid: d40c191aa46654db7a426d6a1fa3aa30, type: 3}
   foodType: 4
+  isGrabbed: 0
 --- !u!136 &136479039350647170
 CapsuleCollider:
   m_ObjectHideFlags: 1
