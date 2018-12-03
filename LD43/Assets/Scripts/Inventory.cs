@@ -10,7 +10,7 @@ public class Inventory : MonoBehaviour {
     public int CurrentSlot = 0;
 
 	void Start () {
-		Objects = new GameObject[4];
+		Objects = new GameObject[3];
 	}
 
     void Update()

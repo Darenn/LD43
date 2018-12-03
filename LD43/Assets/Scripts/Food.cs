@@ -24,16 +24,19 @@ public class Food : MonoBehaviour
     public FoodType foodType;
 
     private bool dropped = false;
+    public bool isGrabbed = false;
     private Coroutine c;
 
     public void droppedOnFloor()
     {
+        isGrabbed = false;
         dropped = true;
         c = StartCoroutine(rott());
     }
 
     public void grabbed()
     {
+        isGrabbed = true;
         dropped = false;
         if (c != null)
             StopCoroutine(c);

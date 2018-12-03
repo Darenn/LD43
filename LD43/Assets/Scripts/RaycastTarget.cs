@@ -87,6 +87,8 @@ public class RaycastTarget : MonoBehaviour
             {
                 GameObject go = Instantiate(kill.PrefabToSpawn, current_target.transform.position, Quaternion.identity);
                 go.GetComponent<Rigidbody>().isKinematic = false;
+                go.GetComponent<Food>().droppedOnFloor();
+                ;
                 Destroy(kill.gameObject);
             }
         }

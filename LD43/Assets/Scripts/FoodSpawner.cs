@@ -19,8 +19,9 @@ public class FoodSpawner : MonoBehaviour
 
     void Update()
     {
-        if (Spawned == null && !spawning)
+        if (Spawned != null && Spawned.GetComponent<Food>().isGrabbed && !spawning)
         {
+            Spawned = null;
             StartCoroutine(WaitAndSpawn());
         }
     }
