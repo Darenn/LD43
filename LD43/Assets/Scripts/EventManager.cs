@@ -32,8 +32,9 @@ public class EventManager : MonoBehaviour
     void Awake () {
         events = new List<Action>();
         events.Add(eventNeedFoodx2);
+        events.Add(eventNeedFoodx2);
         events.Add(eventRejectFoodDivBy2);
-        events.Add(cantSprint);
+        //events.Add(cantSprint);
         events.Add(infiniteSprint);
     }
 	
