@@ -3267,6 +3267,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4910350905667858, guid: b5616e2f4ff114541893bc8f0aa4736f, type: 2}
       propertyPath: m_LocalPosition.x
       value: 20.25
@@ -3400,6 +3405,62 @@ Prefab:
       propertyPath: blockRunning
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[0]
+      value: 
+      objectReference: {fileID: 8300000, guid: 71b8ba57a450506468ba3c18ea0d16f6, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[1]
+      value: 
+      objectReference: {fileID: 8300000, guid: 57967c9742e8d2047ae8fc6750b82c9a, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[2]
+      value: 
+      objectReference: {fileID: 8300000, guid: 096ac59ae6daad64a9b0f64e33b30601, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[3]
+      value: 
+      objectReference: {fileID: 8300000, guid: a8544b3ab977a9643ab378cebc5740d2, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[4]
+      value: 
+      objectReference: {fileID: 8300000, guid: d21a9605fae84944c868b75333fddc42, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[5]
+      value: 
+      objectReference: {fileID: 8300000, guid: 495966e930ee120438486521a4fbe18d, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[6]
+      value: 
+      objectReference: {fileID: 8300000, guid: d21a9605fae84944c868b75333fddc42, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[7]
+      value: 
+      objectReference: {fileID: 8300000, guid: d808b46aee7ad1640a8c588ec6262d81, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[8]
+      value: 
+      objectReference: {fileID: 8300000, guid: 89ac5a03124dd0a47ab153217096cbea, type: 3}
+    - target: {fileID: 114684783870474930, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: m_FootstepSounds.Array.data[9]
+      value: 
+      objectReference: {fileID: 8300000, guid: 495966e930ee120438486521a4fbe18d, type: 3}
+    - target: {fileID: 82035035890457426, guid: b5616e2f4ff114541893bc8f0aa4736f,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243564200389562862, guid: 18fff0690a065ae49b1395835c1c1e32,
+        type: 2}
     m_RemovedComponents:
     - {fileID: 120891794840496674, guid: b5616e2f4ff114541893bc8f0aa4736f, type: 2}
     - {fileID: 82186838199965872, guid: b5616e2f4ff114541893bc8f0aa4736f, type: 2}
@@ -3649,17 +3710,18 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1160067504}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dba053cab01602447a0f0d470addd0c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   uimanager: {fileID: 0}
-  TimeBetweenEvents: 5
+  TimeBetweenEvents: 25
   food:
   - {fileID: 114124729009763054, guid: 263160323cba77648b802caade1f83cb, type: 2}
   - {fileID: 114032614759477536, guid: c5a37176ee4c67c43b766efb065b7982, type: 2}
   - {fileID: 114911325562905340, guid: d08d489e97829eb4bbde68484761666c, type: 2}
+  - {fileID: 114032614759477536, guid: c5a37176ee4c67c43b766efb065b7982, type: 2}
   timer: 0
   maxTimer: 0
   currentSprite: {fileID: 0}
