@@ -19,12 +19,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4335041893572184}
-  - component: {fileID: 33316998296009990}
-  - component: {fileID: 23458296791125170}
-  - component: {fileID: 65224238675604384}
   - component: {fileID: 114489164705962296}
   - component: {fileID: 114893121322022748}
   - component: {fileID: 54913906918940236}
+  - component: {fileID: 65133188797868982}
   m_Layer: 0
   m_Name: Knife
   m_TagString: Knife
@@ -32,6 +30,65 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1382812095264538
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4195633419619150}
+  m_Layer: 0
+  m_Name: Couteau
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1425437656135436
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4251066551601914}
+  - component: {fileID: 33485589243258342}
+  - component: {fileID: 23597711322114708}
+  m_Layer: 0
+  m_Name: pCylinder2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4195633419619150
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1382812095264538}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4251066551601914}
+  m_Father: {fileID: 4335041893572184}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4251066551601914
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1425437656135436}
+  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4195633419619150}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4335041893572184
 Transform:
   m_ObjectHideFlags: 1
@@ -39,18 +96,19 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1341368920014614}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 18.3, y: 38.5, z: 10.16}
+  m_LocalPosition: {x: 65.32, y: 24.09, z: 74.52}
   m_LocalScale: {x: 0.2, y: 0.5, z: 0.2}
-  m_Children: []
+  m_Children:
+  - {fileID: 4195633419619150}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!23 &23458296791125170
+--- !u!23 &23597711322114708
 MeshRenderer:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341368920014614}
+  m_GameObject: {fileID: 1425437656135436}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -60,7 +118,8 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 635fe0f35d38b7c439da403497291302, type: 2}
+  - {fileID: 2100000, guid: 5d77b945ace8ebb4d9e5b966df013474, type: 3}
+  - {fileID: 2100002, guid: 5d77b945ace8ebb4d9e5b966df013474, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -80,13 +139,13 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!33 &33316998296009990
+--- !u!33 &33485589243258342
 MeshFilter:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1341368920014614}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_GameObject: {fileID: 1425437656135436}
+  m_Mesh: {fileID: 4300000, guid: 5d77b945ace8ebb4d9e5b966df013474, type: 3}
 --- !u!54 &54913906918940236
 Rigidbody:
   m_ObjectHideFlags: 1
@@ -102,7 +161,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65224238675604384
+--- !u!65 &65133188797868982
 BoxCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -112,8 +171,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 3.9629745, y: 11.921349, z: 5.6661606}
+  m_Center: {x: 0.3034401, y: 6.8623466, z: -0.3082466}
 --- !u!114 &114489164705962296
 MonoBehaviour:
   m_ObjectHideFlags: 1

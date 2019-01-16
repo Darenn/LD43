@@ -77,8 +77,15 @@ public class RaycastTarget : MonoBehaviour
             // If i have food and im looking to the cabane
             if (cabane != null && food != null)
             {
-                cabane.Feed(food);
-                dropSelectedObjDestroy();
+                if (food.foodType != cabane.currentFood().foodType)
+                {
+
+                }
+                else
+                {
+                    cabane.Feed(food);
+                    dropSelectedObjDestroy();
+                }
             }
 
             // Or cut the guy

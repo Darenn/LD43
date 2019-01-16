@@ -29,8 +29,8 @@ public class EventManager : MonoBehaviour
     public Cabane cabane;
     public GameManager gm;
 
-    void Awake () {
-        events = new List<Action>();
+    /*void Awake () {
+        /*events = new List<Action>();
         events.Add(eventNeedFoodx2);
         events.Add(eventNeedFoodx2);
         events.Add(eventRejectFoodDivBy2);
@@ -40,7 +40,7 @@ public class EventManager : MonoBehaviour
 	
 	void Update ()
 	{
-	    timer = Mathf.Clamp(timer - Time.deltaTime, 0, 100);
+	    /*timer = Mathf.Clamp(timer - Time.deltaTime, 0, 100);
 	    if (timer <= 0 && !launchingEventing)
         {
             resetToDefault();
@@ -147,5 +147,5 @@ public class EventManager : MonoBehaviour
     void setTimer(float time)
     {
         timer = maxTimer = time;
-    }
+    }*/
 }

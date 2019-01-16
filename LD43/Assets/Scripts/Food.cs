@@ -47,7 +47,7 @@ public class Food : MonoBehaviour
         yield return new WaitForSeconds(TimeToRott);
         if (dropped)
         {
-            Destroy(gameObject);
+           // Destroy(gameObject);
         }
     }
 }

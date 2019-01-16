@@ -63,7 +63,7 @@ public class UIManager : MonoBehaviour
 	    if ((Timer % 60f) < 10) sec = "0" + sec;
         TimerText.text =  min + ":" + sec;
 
-	    EventSprite.sprite = em.currentSprite;
+	    //EventSprite.sprite = em.currentSprite;
 	    EventTimer.fillAmount = em.timer / em.maxTimer;
 	}
 
